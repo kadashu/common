@@ -79,3 +79,11 @@ func SplitTagsString(s string) (err error, tags map[string]string) {
 
 	return
 }
+
+// merge and overwrite
+func MergeTagsMap(sourceTagsMap, targetTagsMap map[string]string) (tags map[string]string) {
+	for k, v := range targetTagsMap {
+		sourceTagsMap[k] = v
+	}
+	return sourceTagsMap
+}
